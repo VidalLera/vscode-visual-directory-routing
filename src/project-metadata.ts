@@ -1,7 +1,7 @@
 const META_DATA = {
 	next: {
 		pageAndLayoutMatcher: '**/{page,layout}.{tsx,jsx}',
-	 	basePathMatcher: /\/app\/.*/g
+	 	basePathMatcher: /\/app\//g
 	},
 	svelteKit: {},
 	qwikCity: {},

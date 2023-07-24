@@ -1,5 +1,5 @@
 {
-  "name": "visual-directory-routing-",
+  "name": "visual-directory-routing",
   "displayName": "visual directory routing ",
   "description": "visaulyze and navigate in complex directory routing easily",
   "version": "0.0.1",
@@ -14,8 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "visual-directory-routing-.helloWorld",
-        "title": "Hello World"
+        "command": "visual-directory-routing.displayTree",
+        "title": "See directory tree"
+      },
+      {
+        "command": "visual-directory-routing.searchByRoute",
+        "title": "Search By Route"
       }
     ]
   },

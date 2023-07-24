@@ -32,10 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 		inputBox.onDidChangeValue((val) => console.log(val));
 		// vscode.window.createWebviewPanel('', '', { viewColumn: vscode.ViewColumn })
 
-		vscode.window.showWorkspaceFolderPick({
-			placeHolder: "",
-			ignoreFocusOut: true
-		});	
+		vscode.commands.executeCommand("");
 	});
 
 	context.subscriptions.push(disposable);
@@ -65,10 +62,11 @@ async function getRoutingPath ({ pageAndLayoutMatcher, basePathMatcher }: FileMa
 	return pagesAndLayouts;
 }
 
+
 function excludeBasePath (path: string, matcher: RegExp) {
-	const match = path.match(matcher);
-	if (match === null) { throw new Error("couldn't match base path"); };
-	const [relativePath] = match;
+	const match = path.split(matcher);
+	// if (match === null) { throw new Error("couldn't match base path"); };
+	const [,relativePath] = match;
 	console.log({ relativePath });
 	return relativePath;
 }
